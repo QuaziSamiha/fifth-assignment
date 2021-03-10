@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +11,24 @@
 
     <title>Cooking Master</title>
 </head>
+
 <body>
-    
+    <nav id="search-bar" class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <form class="d-flex">
+                <input id="search-food" class="form-control me-2" type="search" placeholder="Search for Meal...." aria-label="Search">
+                <button id="search-btn" class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div id="foodies">
+        <ul id="food-list">
+
+        </ul>
+    </div>
+
     <!-- adding javaScript file -->
     <script src="script.js"></script>
 </body>
+
 </html>
