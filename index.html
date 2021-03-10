@@ -6,25 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- adding bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
     <!-- adding css file -->
     <link rel="stylesheet" href="style.css">
-
+    
     <title>Cooking Master</title>
 </head>
 
 <body>
-    <nav id="search-bar" class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <form class="d-flex">
-                <input id="search-food" class="form-control me-2" type="search" placeholder="Search for Meal...." aria-label="Search">
-                <button id="search-btn" class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+    <form class="col-md-6 m-auto py-5">
+        <div class="input-group mb-3">
+            <input id="search-food" type="text" class="form-control" placeholder="Search for Meal..." id="city-name">
+            <div class="input-group-append">
+                <button id="search-btn" type="button" class="btn btn-danger" >Search</button>
+            </div>
         </div>
-    </nav>
+    </form>
+    
     <div id="foodies">
-        <ul id="food-list">
-
-        </ul>
+        <ul id="food-list"></ul>
     </div>
 
     <!-- adding javaScript file -->

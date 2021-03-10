@@ -9,10 +9,14 @@
 </head>
 
 <body>
+    <button id="btn">press for food</button>
     <script>
-        fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=sandwich')
-            .then(res => res.json())
-            .then(data => console.log(data))
+        document.getElementById('btn').addEventListener('click', function () {
+            fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=sandwich')
+                .then(res => res.json())
+                .then(data => console.log(data))
+        })
+
     </script>
 </body>
 
