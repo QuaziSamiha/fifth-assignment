@@ -1,21 +1,22 @@
-const searchFood = document.getElementById('search-food').value;
-fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=sandwich')
-    .then(response => response.json())
-    // .then(data => console.log(data))
-    .then(data => displayFood(data))
+const searchFood = document.getElementById('search-food');
+const searchBtn = document.getElementById('search-btn');
+searchBtn.addEventListener("click", function () {
 
-const displayFood = foodies => { // arrow function
+    fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + searchFood.value)
+        .then(response => response.json())
+        .then(data => displayFood(data))
 
-    const searchBtn = document.getElementById('search-btn');
-    searchBtn.addEventListener("click", function () {
+    const displayFood = foodies => { // arrow function
+
 
         console.log(foodies);
-        const foodList = document.getElementById('food-list');
+        const allFood = document.getElementById('all-food');
 
         foodies.meals.forEach(function (food) {
-            const foodName = document.createElement('li');
-            foodName.innerText = food.strMeal;
-            foodList.appendChild(foodName);
+            const foodItem = document.createElement('div');
+            foodItem.innerText = food.strMeal;
+            foodItem.className = 'food-item'
+            allFood.appendChild(foodItem);
         });
-    })
-}
+    }
+})
