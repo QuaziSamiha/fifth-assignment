@@ -27,7 +27,6 @@ body{
     border-radius: 7px;
     text-align: center;
     padding: 10px;
-    /* margin: 5px; */
 }
 #ingredient-div{
     display: none;
@@ -38,17 +37,17 @@ body{
     padding: 20px;
 }
 #image{
-    width: 200px;
+    width: 280px;
     height: 150px;
     border-radius: 10px;
 }
 #name{
     width: 150px;
-    height: 30px;
+    height: 60px;
     border-radius: 6px;
 }
 #ingredient-img{
-    width: 200px;
+    width: 300px;
     height: 150px;
     border-radius: 15px;
 }

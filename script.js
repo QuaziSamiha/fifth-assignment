@@ -2,7 +2,7 @@ const searchFood = document.getElementById('search-food');
 const searchBtn = document.getElementById('search-btn');
 searchBtn.addEventListener("click", function () {
 
-    if (searchFood.value == "") {
+    if (searchFood.value == "") { // if search bar in empty
         document.getElementById('all-food').style.display = 'none';
         document.getElementById('ingredient-div').style.display = 'none';
     }
@@ -12,7 +12,7 @@ searchBtn.addEventListener("click", function () {
             .then(data => displayFood(data))
 
         const displayFood = foodies => { // arrow function
-            console.log(foodies);
+
             const allFood = document.getElementById('all-food');
 
             foodies.meals.forEach(function (food) { // forEach method
@@ -21,8 +21,9 @@ searchBtn.addEventListener("click", function () {
                 foodItem.className = 'food-item';
 
                 // these innerHTML are for image and name of each food item
+                // if image is clicked,then ingredients will be shown 
                 const foodDetail = `
-            <div class="food-image" onclick="showIngredient('${food.strMeal}')">
+            <div class="food-image" onclick="showIngredient('${food.strMeal}')"> 
             <img id="image" src="${food.strMealThumb}">
              </div>
             <div class="food-name">
@@ -38,9 +39,12 @@ searchBtn.addEventListener("click", function () {
 })
 
 const ingredientDiv = document.getElementById('ingredient-div');
+
 const showIngredient = foodName => {
+
     document.getElementById('ingredient-div').style.display = 'block';
     const ingredientDiv = document.getElementById('ingredient-div');
+
     fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + foodName)
         .then(response => response.json())
         .then(data => {
