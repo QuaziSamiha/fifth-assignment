@@ -22,9 +22,11 @@ searchBtn.addEventListener("click", function () {
 
                 // these innerHTML are for image and name of each food item
                 const foodDetail = `
-            <div class="food-image" onclick="showIngredient('${food.strMeal}')"> </div>
+            <div class="food-image" onclick="showIngredient('${food.strMeal}')">
+            <img id="image" src="${food.strMealThumb}">
+             </div>
             <div class="food-name">
-                <h6>${food.strMeal}</h6>
+                <h6 id="name">${food.strMeal}</h6>
             </div>
             `;
                 foodItem.innerHTML = foodDetail;
@@ -36,16 +38,17 @@ searchBtn.addEventListener("click", function () {
 })
 
 const ingredientDiv = document.getElementById('ingredient-div');
-
 const showIngredient = foodName => {
     document.getElementById('ingredient-div').style.display = 'block';
     const ingredientDiv = document.getElementById('ingredient-div');
-    ingredientDiv.style.visibility = null;
     fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + foodName)
         .then(response => response.json())
         .then(data => {
             data.meals.forEach(function (ingredient) {
 
+                ingredientDiv.innerHTML = `
+                <img id="ingredient-img" src="${ingredient.strMealThumb}">
+                `
                 const foodTitle = document.createElement('h3');
                 foodTitle.innerText = foodName;
                 ingredientDiv.appendChild(foodTitle);

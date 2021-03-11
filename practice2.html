@@ -23,9 +23,25 @@
                 .then(res => res.json())
                 .then(data => displayFood(data))
 
-                const displayFood = foodies =>{
-                    console.log(foodies.meals.strMealThumb);
-                }
+            const displayFood = foodies => {
+                console.log(foodies);
+                const foodImage = document.getElementById('food-image');
+                // foodImage.innerHTML = `
+                // <img src="${foodies.meals[1].strMealThumb}">
+                // `
+                // for (let i = 0; i < foodies.meals.length; i++) {
+                //     // const foodImage = document.getElementById('food-image');
+                //     foodImage.innerHTML = `
+                //     <img src="${foodies.meals[i].strMealThumb}">
+                //     `;
+                // }
+                foodies.meals.forEach(function (food) {
+                    foodImage.innerHTML = `
+                    <img src="${food.strMealThumb}">
+                    `;
+                })
+            }
+
         })
     </script>
 </body>

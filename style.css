@@ -19,6 +19,8 @@ body{
     background-color: burlywood;
     height: 150px;
     border-radius: 10px;
+    width: 30px;
+    height: 150px;
 }
 .food-name{
     background-color: whitesmoke;
@@ -34,4 +36,19 @@ body{
     border-radius: 10px;
     width: 30%;
     padding: 20px;
+}
+#image{
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+}
+#name{
+    width: 150px;
+    height: 30px;
+    border-radius: 6px;
+}
+#ingredient-img{
+    width: 200px;
+    height: 150px;
+    border-radius: 15px;
 }
