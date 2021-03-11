@@ -6,15 +6,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+       #all-food{
+           background-color: aquamarine;
+           display: grid;
+           grid-template-columns: repeat(4, 1fr);
+           grid-gap: 20px;
+       }
+       .food-image{
+           background-color: coral;
+           height: 100px;
+       }
+       .food-name{
+           background-color: darkgray;
+       }
+       .food-detail{
+           border: darkred solid 6px;
+           /* border-radius: 10px; */
+           /* padding: 10px; */
+           margin: 5px;
+       }
+    </style>
+
 </head>
 
 <body>
     <button id="btn">press for food</button>
+    <div id="ingredient">
+
+    </div>
+    <div id="all-food">
+
+    </div>
+
     <script>
         document.getElementById('btn').addEventListener('click', function () {
             fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=sandwich')
                 .then(res => res.json())
-                .then(data => console.log(data))
+                .then(data => foodIngredient(data))
+
+
+            const foodIngredient = ingredients => {
+
+                const ingredientDiv = document.getElementById('ingredient');
+
+                ingredients.meals.forEach(function (food) {
+
+                    const allFood = document.getElementById('all-food')
+                    const foodDetail = document.createElement('div');
+                    foodDetail.className = 'food-detail';
+
+                    const foodItem = `
+                        <div class="food-image"></div>
+                        <div class="food-name"><h3>${food.strMeal}</h3></div>
+                        `;
+
+                    foodDetail.innerHTML = foodItem;
+                    allFood.appendChild(foodDetail);
+
+                    // const p = document.createElement('p');
+                    // p.innerText = food.strIngredient1;
+                    // ingredientDiv.appendChild(p);
+
+                    console.log(food.strIngredient1);
+                    console.log(food.strIngredient2);
+                    console.log(food.strIngredient3);
+                    console.log(food.strIngredient4);
+                    console.log(food.strIngredient5);
+                    console.log(food.strIngredient6);
+                    console.log(food.strIngredient7);
+                    console.log(food.strIngredient8);
+                    console.log(food.strIngredient9);
+                    console.log(food.strIngredient10);
+                    console.log(food.strIngredient11);
+                    console.log(food.strIngredient12);
+                    console.log(food.strIngredient13);
+                    console.log(food.strIngredient14);
+                    console.log(food.strIngredient15);
+                    console.log(food.strIngredient16);
+                    console.log(food.strIngredient17);
+                    console.log(food.strIngredient18);
+                    console.log(food.strIngredient19);
+                    console.log(food.strIngredient20);
+                })
+            }
         })
 
     </script>

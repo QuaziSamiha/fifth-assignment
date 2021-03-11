@@ -9,12 +9,29 @@ body{
 #all-food{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+    grid-gap: 20px;
 }
 .food-item{
+    border: crimson solid 3px;
+    border-radius: 15px;
+}
+.food-image{
+    background-color: burlywood;
+    height: 150px;
+    border-radius: 10px;
+}
+.food-name{
     background-color: whitesmoke;
-    border-radius: 5px;
+    border-radius: 7px;
     text-align: center;
     padding: 10px;
-    margin: 5px;
+    /* margin: 5px; */
+}
+#ingredient-div{
+    display: none;
+    background-color: burlywood;
+    border: crimson solid 5px;
+    border-radius: 10px;
+    width: 30%;
+    padding: 20px;
 }
